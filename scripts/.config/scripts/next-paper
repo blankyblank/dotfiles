@@ -1,0 +1,3 @@
+#!/bin/sh
+
+pkill -SIGTERM feh_randomize

@@ -1,0 +1,12 @@
+#info
+l select-reference-this-line
+^m select-reference-this-line
+h history-node
+
+#var
+scroll-step=0
+search-skip-screen=On
+automatic-footnotes=On
+link-style=magenta,underline
+active-link-style=magenta,standout
+match-style=blue,standout

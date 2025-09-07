@@ -1,0 +1,19 @@
+#!/usr/bin/sh
+
+dte(){
+  time=$(date '+%I:%M%P')
+  echo "$time"
+}
+bat(){
+  read -r batt /sys/class/power_supply/BAT0/capacity
+  echo "$batt%"
+}
+vpn(){
+  proxy=$(mullvad status | grep -i relay | cut --delimiter=: --fields=2 | tr -s " ")
+  echo "$proxy󰒄"
+}
+
+while true; do
+  xsetroot -name "$(bat) $(vpn)  $(dte)" 
+  sleep 10s 
+done

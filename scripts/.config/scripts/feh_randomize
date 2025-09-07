@@ -1,0 +1,16 @@
+#!/bin/bash
+
+my_pid="$$"
+
+update() {
+  pkill -P "$my_pid" sleep
+}
+trap update SIGTERM
+
+while true; do
+  feh --no-fehbg --bg-scale "$HOME"/Pictures/switcher/"$(ls "$HOME"/Pictures/switcher | shuf -n 1)"
+  sleep 15m &
+  wait
+  #sleep 5m
+  [ -z "$DISPLAY" ] && exit
+done

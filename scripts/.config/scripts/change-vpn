@@ -1,0 +1,3 @@
+#!/bin/sh
+
+mullvad reconnect && notify-send "Changed to another VPN server"

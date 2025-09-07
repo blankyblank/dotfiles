@@ -1,0 +1,23 @@
+vim.keymap.set("i", "<M-b>", "<ESC>^i", { desc = "move beginning of line" })
+vim.keymap.set("i", "<M-e>", "<End>", { desc = "move end of line" })
+vim.keymap.set("n", "<C-b>", "0", { desc = "move beginning of line" })
+vim.keymap.set("n", "<C-e>", "<End>", { desc = "move end of line" })
+
+vim.g.maplocalleader = ","
+vim.api.nvim_set_keymap("n", "<leader>q", ":quit<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>z", ":wq<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tn", ":tabnext<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tp", ":tabprevious<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>tq", ":tabc<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>sw", ":SudaWrite<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Esc>", "<cmd>noh<CR>", { noremap = true })
+
+vim.api.nvim_set_keymap("n", "<leader>u", [[:lua require('undotree').toggle() <CR>]], { noremap = true, desc = 'toggle undotree'})
+vim.keymap.set('n', '<leader>ff', [[:lua require"fzf-lua".files()<CR>]], { desc = 'find files' })
+vim.keymap.set('n', '<leader>fg', [[:lua require"fzf-lua".live_grep()<CR>]], { desc = 'live grep search' })
+vim.keymap.set('n', '<leader>fc', [[:lua require"fzf-lua".lgrep_curbuf()<CR>]], { desc = 'search current buffer' })
+vim.keymap.set('n', '<leader>fh', [[:lua require"fzf-lua".helptags()<CR>]], { desc = 'search help tags' })
+vim.keymap.set("n", "<leader>fo", [[:lua require"fzf-lua".oldfiles()<CR>]], { desc = "find oldfiles" })
+vim.keymap.set("n", "<leader>fb", [[:lua require"fzf-lua".buffers()<CR>]], { desc = "search buffers" })
+vim.keymap.set('n', '<leader>ft', [[:lua require"fzf-lua".tabs()<CR>]], { desc = 'search tabs' })

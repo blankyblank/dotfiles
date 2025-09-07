@@ -1,0 +1,12 @@
+set smoothscroll true
+bind j scrollline 5
+bind k scrollline -5
+
+bind O fillcmdline tabopen
+bind t tabopen
+
+bind / fillcmdline find
+bind n findnext
+bind N findnext --reverse
+bind ,<Space> nohlsearch
+

@@ -1,0 +1,169 @@
+# You can override any parts of them that are not related to the dark/light mode in your own `theme.toml`.
+# for dark and light modes under `[flavor]`, and do so in those flavors instead.
+"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+
+
+# : Flavor {{{
+
+#[flavor]
+#dark  = "onedark"
+#light = ""
+
+[icon]
+globs = []
+dirs  = []
+files = []
+exts  = []
+conds = []
+
+# : }}}
+
+# : Manager {{{
+
+[mgr]
+cwd = { fg = "magenta" }
+
+# Hovered
+hovered         = { reversed = true }
+preview_hovered = { underline = false }
+
+#Border
+border_symbol = " "
+border_style  = { fg = "#abb2bf" }
+
+# Highlighting
+syntect_theme = ""
+
+# : }}}
+
+
+# : Mode {{{
+
+[mode]
+
+normal_main = { bg = "magenta", fg = "black", bold = true }
+normal_alt  = { fg = "magenta", bg = "black" }
+
+# Select mode
+select_main = { bg = "blue", fg = "black", bold = true }
+select_alt  = { fg = "blue", bg = "black" }
+
+# Unset mode
+unset_main = { bg = "red", fg = "black", bold = true }
+unset_alt  = { fg = "red", bg = "black" }
+
+# : }}}
+
+[tabs]
+active = { bg = "magenta", fg = "black" }
+inactive = { fg = "magenta", bg = "black"}
+sep_inner = { open = " ", close = " " }
+sep_outer = { open = " ", close = " " }
+
+# : Status bar {{{
+
+[status]
+separator_open  = "|"
+separator_close = "|"
+
+# Progress
+progress_label  = { bold = true }
+progress_normal = { fg = "blue", bg = "black" }
+progress_error  = { fg = "red", bg = "black" }
+
+# Permissions
+perm_sep   = { fg = "darkgray" }
+perm_type  = { fg = "magenta" }
+perm_read  = { fg = "magenta" }
+perm_write = { fg = "cyan" }
+perm_exec  = { fg = "red" }
+
+# : }}}
+
+
+# : Pick {{{
+
+[pick]
+border   = { fg = "magenta" }
+active   = { fg = "magenta", bold = true }
+inactive = {}
+
+# : }}}
+
+
+# : Input {{{
+
+[input]
+border   = { fg = "magenta" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+# : }}}
+
+
+# : Confirm {{{
+
+[confirm]
+border     = { fg = "magenta" }
+title      = { fg = "magenta" }
+content    = {}
+list       = {}
+btn_yes    = { reversed = true }
+btn_no     = {}
+btn_labels = [ "  [Y]es  ", "  (N)o  " ]
+
+# : }}}
+
+
+# : Completion {{{
+
+[completion]
+border   = { fg = "magenta" }
+active   = { reversed = true }
+inactive = {}
+
+# Icons
+icon_file    = ""
+icon_folder  = ""
+icon_command = ""
+
+# : }}}
+
+
+# : Tasks {{{
+
+[tasks]
+border  = { fg = "magenta" }
+title   = {}
+hovered = { fg = "magenta", underline = true }
+
+# : }}}
+
+
+# : Which {{{
+
+[which]
+cols            = 3
+mask            = { bg = "black" }
+cand            = { fg = "#abb2bf" }
+rest            = { fg = "grey" }
+desc            = { fg = "lightmagenta" }
+separator       = "="
+separator_style = { fg = "darkgray" }
+
+# : }}}
+
+
+# : Help {{{
+
+[help]
+on      = { fg = "blue" }
+run     = { fg = "magenta" }
+desc    = {}
+hovered = { reversed = true, bold = true }
+footer  = { fg = "grey", bg = "darkgray" }
+
+# : }}}
+
+# vim:fileencoding=utf-8:foldmethod=marker

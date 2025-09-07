@@ -1,0 +1,47 @@
+!
+! Generated with :
+! XRDB2Xreources.py
+!
+*.foreground:  #dcdfe4
+*.background:  #282c34
+*.cursorColor: #abb2bf
+!
+*.color0:      #3F4451
+*.color8:      #4F5666
+*.color1:      #e06c75
+*.color9:      #e06c75
+*.color2:      #98c379
+*.color10:     #98c379
+*.color3:      #e5c07b
+*.color11:     #e5c07b
+*.color4:      #61afef
+*.color12:     #61afef
+*.color5:      #c678dd
+*.color13:     #c678dd
+*.color6:      #56b6c2
+*.color14:     #56b6c2
+*.color7:      #dcdfe4
+*.color15:     #dcdfe4
+! Bold, Italic, Underline
+*.colorBD:     #abb2bf
+
+Xcursor.theme: Adwaita
+Xcursor.size: 24
+
+XTerm.*.faceName:               CaskaydiaCove Nerd Font Mono:antialias=true
+XTerm.*.faceSize:               17
+XTerm.*.renderFont:             True
+
+XTerm.vt100.saveLines:          4096
+XTerm*shapeStyle:               Rectangle
+XTerm*beNiceToColormap:         True
+XTerm*relief:                   None
+XTerm*highlightThickness:       0
+XTerm*cursorBlink:              false
+XTerm*allowMouseOps:            false
+XTerm*vt100.internalBorder:     3
+XTerm*decTerminalID:            vt382
+*visualBell:                    True
+XTerm*vt100.translations: #override \
+    Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+    Shift Ctrl <Key> V: insert-selection(CLIPBOARD)

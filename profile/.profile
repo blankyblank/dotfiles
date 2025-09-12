@@ -11,6 +11,12 @@ export MANPAGER='nvim +Man!'
 export ARCHFLAGS="-arch x86_64"
 export CFLAGS="-march=native -O2 -pipe -flto"
 
+export LESS='-sRiMX --shift 5'
+export LESSCOLOR=always
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+export FZF_DEFUALT_COMMAND="fd ."
+export FZF_DEFAULT_OPTS="--color='16,hl:magenta' --prompt='$ ' --marker='+' --info=inline-right --no-scrollbar --no-separator"
+
 # clean up home dir
 export ABDUCO_SOCKET_DIR="$XDG_DATA_HOME"/abduco
 export W3M_DIR="$XDG_DATA_HOME"/w3m
@@ -24,12 +30,6 @@ export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
-
-export LESS='-sRiMX --shift 5'
-export LESSCOLOR=always
-export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
-export FZF_DEFUALT_COMMAND="fd ."
-export FZF_DEFAULT_OPTS="--color='16,hl:magenta' --prompt='$ ' --marker='+' --info=inline-right --no-scrollbar --no-separator"
 
 sudo /usr/bin/loadkeys ~/.local/share/keystrings
 

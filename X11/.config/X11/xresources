@@ -28,8 +28,8 @@
 Xcursor.theme: Adwaita
 Xcursor.size: 24
 
-XTerm.*.faceName:               CaskaydiaCove Nerd Font Mono:antialias=true
-XTerm.*.faceSize:               17
+XTerm.*.faceName:               JetBrainsMono Nerd Font Mono:antialias=true
+XTerm.*.faceSize:               16
 XTerm.*.renderFont:             True
 
 XTerm.vt100.saveLines:          4096

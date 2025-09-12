@@ -13,7 +13,6 @@ vim.api.nvim_set_keymap("n", "<leader>tq", ":tabc<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>sw", ":SudaWrite<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Esc>", "<cmd>noh<CR>", { noremap = true })
 
-vim.api.nvim_set_keymap("n", "<leader>u", [[:lua require('undotree').toggle() <CR>]], { noremap = true, desc = 'toggle undotree'})
 vim.keymap.set('n', '<leader>ff', [[:lua require"fzf-lua".files()<CR>]], { desc = 'find files' })
 vim.keymap.set('n', '<leader>fg', [[:lua require"fzf-lua".live_grep()<CR>]], { desc = 'live grep search' })
 vim.keymap.set('n', '<leader>fc', [[:lua require"fzf-lua".lgrep_curbuf()<CR>]], { desc = 'search current buffer' })
@@ -21,3 +20,5 @@ vim.keymap.set('n', '<leader>fh', [[:lua require"fzf-lua".helptags()<CR>]], { de
 vim.keymap.set("n", "<leader>fo", [[:lua require"fzf-lua".oldfiles()<CR>]], { desc = "find oldfiles" })
 vim.keymap.set("n", "<leader>fb", [[:lua require"fzf-lua".buffers()<CR>]], { desc = "search buffers" })
 vim.keymap.set('n', '<leader>ft', [[:lua require"fzf-lua".tabs()<CR>]], { desc = 'search tabs' })
+vim.keymap.set('n', '<leader>fm', ":Noice pick<CR>", { desc = 'find files' })
+vim.api.nvim_set_keymap("n", "<leader>u", [[:lua require('undotree').toggle() <CR>]], { noremap = true, desc = 'toggle undotree'})

@@ -1,13 +1,13 @@
+local custom_onedark = require'lualine.themes.onedark'
+custom_onedark.normal.c.bg = '#282C34'
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'onedark',
+    theme = custom_onedark,
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
-    disabled_filetypes = {
-      statusline = {},
-      winbar = {},
-    },
+    disabled_filetypes = { statusline = {}, winbar = {}, },
     ignore_focus = {"undotree"},
     always_divide_middle = true,
     always_show_tabline = true,
@@ -32,9 +32,9 @@ require('lualine').setup {
     }
   },
   sections = {
-    lualine_a = {},
-    lualine_b = {'mode'},
+    lualine_a = {}, lualine_b = {},
     lualine_c = {
+      'mode',
       'branch',
       { 'diff',
         colored = true,
@@ -46,13 +46,19 @@ require('lualine').setup {
       },
       'filename',
     },
-    lualine_x = {'diagnostics', 'filetype'},
-    lualine_y = {},
-    lualine_z = {}
-    --lualine_x = {'encoding', 'fileformat', 'filetype'},'fileformat','searchcount'
-   -- lualine_y = {'progress'},
 
+    lualine_x = {
+      'diagnostics',
+      'filetype',
+      {
+        require("noice").api.status.mode.get,
+        cond = require("noice").api.status.mode.has,
+        color = { fg = "#E06C75" },
+      },
+    },
+    lualine_y = {}, lualine_z = {}
   },
+
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},

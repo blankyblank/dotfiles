@@ -11,6 +11,9 @@ alias pd='pushd'
 alias wget='wget --hsts-file=~/.local/state/wget-hsts'
 alias info='info --vi-keys'
 alias reboot='loginctl reboot'
+alias 2..='cd ../..'
+alias 3..='cd ../../..'
+alias 4..='cd ../../../..'
 
 alias makeconf='sudo nvim /etc/portage/make.conf/02-use.conf'
 alias cmakeconf='sudo nvim /etc/portage/make.conf/00-clags.conf'
@@ -28,6 +31,7 @@ alias cconf='nvim config.h ; make -j8 clean ; make -j8 ; sudo make -j8 install'
 alias update-grub='grub-mkconfig -o /boot/grub/grub.cfg'
 alias wikigentoo='wikiman -s gentoo'
 alias wikiarch='wikiman -s arch'
+alias wikitldr='wikiman -s tldr'
 alias clipclean='cliphist wipe'
 alias fontlist='fc-list | cut -f2 -d: | sort -u'
 alias scrnsvoff='xset s off -dpms'
@@ -41,3 +45,15 @@ alias motherdrive='udevil mount /dev/sda2 && cd ~/.local/media/nixos/'
 alias umotherdrive='udevil umount /dev/sda2'
 alias usbumount='udevil umount'
 alias usbmount='udevil mount'
+
+function y() {
+  # shellcheck disable=2155
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd < "$tmp"
+  [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd" || exit
+  rm -f -- "$tmp"
+}
+
+source /usr/share/wikiman/widgets/widget.bash
+eval "$(fzf --bash)"

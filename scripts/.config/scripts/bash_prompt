@@ -1,0 +1,30 @@
+#!/bin/bash
+
+_br="\e[1;31m"
+_bg="\e[1;32m"
+_bm="\e[1;35m"
+_w="\e[00;37m"
+_c="\e[00m"
+
+_es() {
+  if [ "$?" = 0 ]; then
+    printf "$_bg%s" '$'
+  else
+    printf "$_br%s" 'X'
+  fi
+}
+
+_dirty() {
+  [[ $(git status --porcelain 2> /dev/null) ]] && echo "*"
+}
+_git() {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ (\1$(_dirty))/"
+}
+
+set_bash_prompt(){
+  PS1="\[$_bm\]\w\[$_w\]$(_git) \$(_es)\[$_c\] "
+}
+
+PROMPT_COMMAND="set_bash_prompt;$PROMPT_COMMAND"
+
+

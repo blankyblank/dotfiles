@@ -322,8 +322,9 @@ statusbar = {
 settings = {
   core = {
     real_name = "Unknown";
-    user_name = "blankyblank";
+    user_name = "random-name";
     nick = "blankyblank";
+    hostname = "irc123";
   };
   "fe-common/core" = { theme = "lenten"; };
 };

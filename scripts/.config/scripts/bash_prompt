@@ -8,7 +8,7 @@ _c="\e[00m"
 
 _es() {
   if [ "$?" = 0 ]; then
-    printf "$_bg%s" '$'
+    printf "$_bg%s" '>'
   else
     printf "$_br%s" 'X'
   fi
@@ -22,7 +22,7 @@ _git() {
 }
 
 set_bash_prompt(){
-  PS1="\[$_bm\]\w\[$_w\]$(_git) \$(_es)\[$_c\] "
+  PS1="\[$_bm\]\w\[$_w\]$(_git)\$(_es)\[$_c\] "
 }
 
 PROMPT_COMMAND="set_bash_prompt;$PROMPT_COMMAND"

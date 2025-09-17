@@ -26,6 +26,7 @@ require("lazy").setup({
   performance = {
     cache = { enabled = true, },
     rtp = {
+      paths = { "/usr/local/share/vim/vimfiles" },
       disabled_plugins = {
         "gzip",
         "tarPlugin",

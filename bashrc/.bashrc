@@ -31,15 +31,14 @@ shopt -s dirspell 2> /dev/null
 shopt -s cdspell  2> /dev/null
 shopt -s autocd   2> /dev/null
 shopt -s cdable_vars
-export conf="$HOME/.config"
 export snips="$HOME/Documents/snippets"
 export dwmdir="$HOME/.local/src/dwm"
+export dotdir="$HOME/.local/dotfiles"
 export sourcedir="$HOME/.local/src"
 export stowdir="/usr/local/stow"
 export usbdir="$HOME/.local/media"
-export kerndir="/usr/src/linux"
 export rundir="/run/user/1000"
-export projdir="$HOME/Public"
+export projdir="$HOME/Public/efinder"
 export privdir="$HOME/.local/share/Private"
 
 HISTSIZE=50000
@@ -50,7 +49,7 @@ PROMPT_COMMAND='history -a'
 PROMPT_DIRTRIM=3
 CDPATH=".:~:~/.config:/etc"
 
-# GPG_TTY=$(tty)
-# export GPG_TTY
+GPG_TTY=$(tty)
+export GPG_TTY
 source "$HOME"/.config/scripts/bash_prompt
 source "$HOME"/.bash_aliases

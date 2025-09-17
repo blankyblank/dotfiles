@@ -326,5 +326,5 @@ settings = {
     nick = "blankyblank";
     hostname = "irc123";
   };
-  "fe-common/core" = { theme = "lenten"; };
+  "fe-common/core" = { theme = "lenten.theme"; };
 };
